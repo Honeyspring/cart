@@ -1,5 +1,5 @@
 import React,{Component } from 'react';
-import Filters from './Filters.js';
+import Filter from './Filter.js';
 import ProductForm from './ProductForm';
 import ProductTable from './ProductTable.js';
 var PRODUCTS = {
@@ -14,7 +14,7 @@ class Products extends Component {
   render() {
     return (
       <div>
-        <Filters ></Filters>
+        <Filter></Filter>
         <ProductTable ></ProductTable>
         <ProductForm ></ProductForm>
       </div>
