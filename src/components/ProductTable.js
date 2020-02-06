@@ -1,4 +1,4 @@
-import React,{Component } from 'react';
+import React,{Component} from 'react';
 import ProductRow from './ProductRow.js';
 import ProductTableHeader from './ProductTableHeader.js';
 

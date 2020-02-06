@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 
-class Filter extends Component {
+class Filters extends Component {
   render() {
     return (
     	 <form>
@@ -13,4 +13,4 @@ class Filter extends Component {
   }
 }
 
-export default Filter;
+export default Filters;

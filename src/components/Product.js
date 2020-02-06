@@ -1,5 +1,5 @@
 import React,{Component } from 'react';
-import Filter from './Filter.js';
+import Filters from './Filter.js';
 import ProductForm from './ProductForm';
 import ProductTable from './ProductTable.js';
 var PRODUCTS = {
@@ -11,15 +11,31 @@ var PRODUCTS = {
   '6': {id: 6, category: 'Furniture', price: '$100', stocked: true, name: 'Bean Bag'}
 };
 class Products extends Component {
+   constructor(props) {
+    super(props);
+    this.state = {
+      filterText: '',
+      inStockOnly: false,
+      products: PRODUCTS
+    };
+
+  }
   render() {
     return (
       <div>
-        <Filter></Filter>
-        <ProductTable ></ProductTable>
+        <Filters
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+        ></Filters>
+        <ProductTable
+          products={this.state.products}
+          filterText={this.state.filterText}
+          inStockOnly={this.state.inStockOnly}
+        ></ProductTable>
         <ProductForm ></ProductForm>
       </div>
     );
-  } 
+  }
 }
 
 export default Products;
