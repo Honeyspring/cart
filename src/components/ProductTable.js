@@ -17,7 +17,7 @@ class ProductTable extends Component {
     let isDesc = this.state.sort.direction === 'desc' ? 1 : -1;
     let [a, b] = [objectA[this.state.sort.column], objectB[this.state.sort.column]];
     if (this.state.sort.column === 'price') {
-      [a, b] = [a, b].map((value) => parseFloat(value.replace(/[^\d\.]/g, ''), 10));
+      [a, b] = [a, b].map((value) => parseFloat(value.replace(/[^\d]/g, ''), 10));
     }
     if (a > b) {
       return 1 * isDesc;
@@ -45,14 +45,14 @@ class ProductTable extends Component {
         <table>
           <thead>
             <tr>
-              <SortableColumnHeader
+              <ProductTableHeader
                 currentSort={this.state.sort}
                 column="name"
-              ></SortableColumnHeader>
-              <SortableColumnHeader
+              ></ProductTableHeader>
+              <ProductTableHeader
                 currentSort={this.state.sort}
                 column="price"
-              ></SortableColumnHeader>
+              ></ProductTableHeader>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
