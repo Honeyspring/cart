@@ -13,6 +13,7 @@ var PRODUCTS = {
 class Products extends Component {
    constructor(props) {
     super(props);
+    this.handleFilter = this.handleFilter.bind(this);
     this.state = {
       filterText: '',
       inStockOnly: false,
@@ -20,13 +21,17 @@ class Products extends Component {
     };
 
   }
+    handleFilter(filterInput) {
+    this.setState(filterInput);
+  }
   render() {
     return (
       <div>
-        <Filters
+          <Filters
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
-        ></Filters>
+          onFilter={this.handleFilter} //set  local state to match whatever data is triggered in the  <Filters>  component
+        />
         <ProductTable
           products={this.state.products}
           filterText={this.state.filterText}
