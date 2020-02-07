@@ -4,9 +4,9 @@ class Filters extends Component {
   render() {
     return (
     	 <form>
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search..."  value={this.props.filterText}/>
         <p>
-          <input type="checkbox" />&nbsp;Only show stocked products
+          <input type="checkbox"  checked={this.props.inStockOnly}/>&nbsp;Only show stocked products
         </p>
       </form>
     );
